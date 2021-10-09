@@ -1708,7 +1708,7 @@
     "@babel/runtime" "^7.11.2"
     "@tarojs/runtime" "3.3.9"
 
-"@tarojs/cli@3.3.9":
+"@tarojs/cli@^3.3.9":
   version "3.3.9"
   resolved "https://registry.nlark.com/@tarojs/cli/download/@tarojs/cli-3.3.9.tgz#9b1aba63c20fd9e2a9b2be6c435998cabf063990"
   integrity sha1-mxq6Y8IP2eKpsr5sQ1mYyr8GOZA=
@@ -13030,7 +13030,7 @@ react-native-collapsible@^1.6.0:
   resolved "https://registry.nlark.com/react-native-collapsible/download/react-native-collapsible-1.6.0.tgz#ca261ffff16914f872059bb0972e3a78c4b37f9c"
   integrity sha1-yiYf//FpFPhyBZuwly46eMSzf5w=
 
-react-native-gesture-handler@^1.8.0:
+react-native-gesture-handler@^1.10.3, react-native-gesture-handler@^1.8.0:
   version "1.10.3"
   resolved "https://registry.npm.taobao.org/react-native-gesture-handler/download/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
   integrity sha1-lCu/KWO79J+nlZNgDunXtdqzz8A=
@@ -13107,7 +13107,7 @@ react-native-root-toast@^3.0.1:
     prop-types "^15.5.10"
     react-native-root-siblings "^4.0.0"
 
-react-native-safe-area-context@^3.1.8:
+react-native-safe-area-context@^3.1.8, react-native-safe-area-context@^3.3.2:
   version "3.3.2"
   resolved "https://registry.nlark.com/react-native-safe-area-context/download/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
   integrity sha1-lUmizlgPI3TtsF5J1mEljRuLyu0=
