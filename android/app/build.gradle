@@ -160,16 +160,22 @@ android {
         }
     }
     signingConfigs {
-        release {
-            storeFile file(keystore_file)
-            storePassword keystore_password
-            keyAlias keystore_key_alias
-            keyPassword keystore_key_password
-        }
+      debug {
+        storeFile file(keystore_file)
+        storePassword keystore_password
+        keyAlias keystore_key_alias
+        keyPassword keystore_key_password
+      }
+      release {
+        storeFile file(MYAPP_RELEASE_STORE_FILE)
+        storePassword MYAPP_RELEASE_STORE_PASSWORD
+        keyAlias MYAPP_RELEASE_KEY_ALIAS
+        keyPassword MYAPP_RELEASE_KEY_PASSWORD
+      }
     }
     buildTypes {
         debug {
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
             manifestPlaceholders = [
                     usesCleartextTraffic: "true",
                     appIcon             : "@mipmap/${app_icon.isEmpty() ? 'ic_launcher' : app_icon}",
