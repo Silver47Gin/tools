@@ -1,9 +1,22 @@
-import { View, Text, Image } from "@tarojs/components";
+import {
+  View,
+  Text,
+  Image,
+  PageContainer,
+  Input,
+  Button,
+  Picker,
+} from "@tarojs/components";
 import dayjs from "dayjs";
 import { observer } from "mobx-react-lite";
 import { nanoid } from "nanoid/non-secure";
-import { TodoState, todos as todoStore, Todos } from "@tools/stores/todos";
-import { useMemo } from "react";
+import {
+  TodoState,
+  todos as todoStore,
+  Todos,
+  Todo,
+} from "@tools/stores/todos";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import IconFont from "@tools/components/iconfont";
 import "./index.scss";
 
@@ -61,8 +74,69 @@ const colors = ["belizehole", "wisteria", "alizarin", "sunflower"];
 const iconSize = 40;
 
 const TodoList = observer(({ todos }: TodosProps) => {
+  const [editShow, setEditShow] = useState(false);
+  const [content, setContent] = useState("");
+  const [time, setTime] = useState("");
+  const [editId, setEditId] = useState("");
+
+  const showEdit = useCallback(
+    (id: Todo["id"]) => {
+      const target = todos.state.find((todo) => todo.id === id);
+      setEditShow(true);
+      setEditId(id);
+      setTime(dayjs(target!.time).format("YYYY-MM-DD"));
+      setContent(target!.content);
+    },
+    [todos.state]
+  );
+
+  useEffect(() => {
+    todos.load();
+  }, [todos]);
+
   return (
     <View className="todos_container">
+      <PageContainer
+        show={editShow}
+        position="bottom"
+        onClickOverlay={() => setEditShow(false)}
+      >
+        <View className="overlay_header">
+          <Text
+            className="overlay_header_item"
+            onClick={() => setEditShow(false)}
+          >
+            取消
+          </Text>
+          <Text
+            className="overlay_header_item"
+            onClick={() => {
+              todos.update(editId, { content });
+              setEditShow(false);
+            }}
+          >
+            确定
+          </Text>
+        </View>
+        <View className="overlay_row">
+          <Text>内容：</Text>
+          <Input
+            value={content}
+            onInput={(e) => setContent(e.detail.value)}
+            placeholder="请输入待办内容"
+          />
+        </View>
+        <View className="overlay_row">
+          <Text>时间：</Text>
+          <Picker
+            mode="time"
+            onChange={(e) => setTime(e.detail.value)}
+            value={time}
+          >
+            <Text>当前选择：{time}</Text>
+          </Picker>
+        </View>
+      </PageContainer>
       {todos.state.map((todo, idx) => (
         <View
           key={todo.id}
@@ -84,7 +158,10 @@ const TodoList = observer(({ todos }: TodosProps) => {
             </Text>
           </View>
           <View className="todos_card_right">
-            <View className="todos_card_right_icon">
+            <View
+              className="todos_card_right_icon"
+              onClick={() => showEdit(todo.id)}
+            >
               <IconFont name="toolsedit" size={iconSize} color="#ffffff" />
             </View>
             <View

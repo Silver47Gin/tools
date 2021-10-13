@@ -98,11 +98,24 @@
   }
 }
 
-.mask {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9000;
+.overlay {
+  &_header {
+    flex-flow: row;
+    padding: 20px 40px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-color: #eeeeee;
+    border-bottom-width: 1px;
+
+    &_item {
+      color: #3498db;
+      font-size: 36px;
+    }
+  }
+  &_row {
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 }

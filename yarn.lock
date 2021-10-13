@@ -1539,7 +1539,7 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@react-native-async-storage/async-storage@^1.13.2":
+"@react-native-async-storage/async-storage@^1.13.2", "@react-native-async-storage/async-storage@^1.15.9":
   version "1.15.9"
   resolved "https://registry.npmmirror.com/@react-native-async-storage/async-storage/download/@react-native-async-storage/async-storage-1.15.9.tgz?cache=0&sync_timestamp=1633430473181&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40react-native-async-storage%2Fasync-storage%2Fdownload%2F%40react-native-async-storage%2Fasync-storage-1.15.9.tgz#744ecd566f108e86b6b59e617c23fdb4b8d53358"
   integrity sha1-dE7NVm8Qjoa2tZ5hfCP9tLjVM1g=
@@ -11492,6 +11492,11 @@ mobx-react-lite@^3.2.1:
   resolved "https://registry.nlark.com/mobx-react-lite/download/mobx-react-lite-3.2.1.tgz#c549a3722f1eae51a78b12f839311614d5689c58"
   integrity sha1-xUmjci8erlGnixL4OTEWFNVonFg=
 
+mobx-utils@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.nlark.com/mobx-utils/download/mobx-utils-6.0.4.tgz#5283a466ece8de0ac36ae3cfa1b1c032ec302b37"
+  integrity sha1-UoOkZuzo3grDauPPobHAMuwwKzc=
+
 mobx@^6.3.3:
   version "6.3.3"
   resolved "https://registry.nlark.com/mobx/download/mobx-6.3.3.tgz#a3006c56243b1c7ea4ee671a66f963b9f43cf1af"
@@ -14476,7 +14481,7 @@ rxjs@^5.5.2:
   dependencies:
     symbol-observable "1.0.1"
 
-rxjs@^6.4.0, rxjs@^6.6.0:
+rxjs@^6.4.0, rxjs@^6.6.0, rxjs@^6.6.3:
   version "6.6.7"
   resolved "https://registry.npmmirror.com/rxjs/download/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
   integrity sha1-kKwBisq/SRv2UEQjXVhjxNq4BMk=
