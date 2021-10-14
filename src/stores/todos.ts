@@ -1,4 +1,4 @@
-import { getStorage, setStorage } from "@tarojs/taro";
+// import { getStorage, setStorage } from "@tarojs/taro";
 import { makeAutoObservable, runInAction } from "mobx";
 import { toStream } from "mobx-utils";
 import { from } from "rxjs";
@@ -43,24 +43,29 @@ export class Todos {
     this.state = this.state.filter((todo) => todo.id !== id);
   }
 
-  async load() {
-    this.state = [];
-    try {
-      const todos: Todo[] = await (await getStorage({ key: storageKey })).data;
-      runInAction(() => {
-        this.state = todos;
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // async load() {
+  //   this.state = [];
+  //   try {
+  //     const todos: Todo[] = await (await getStorage({ key: storageKey })).data;
+
+  //     if (!todos || !todos.length) {
+  //       throw Error("读取todos出错");
+  //     }
+
+  //     runInAction(() => {
+  //       this.state = todos;
+  //     });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 }
 
 export const todos = new Todos();
 
-from(toStream(() => [...todos.state]))
-  .pipe(
-    throttleTime(1000),
-    switchMap((state) => from(setStorage({ key: storageKey, data: state })))
-  )
-  .subscribe(console.log);
+// from(toStream(() => [...todos.state]))
+//   .pipe(
+//     throttleTime(1000),
+//     switchMap((state) => from(setStorage({ key: storageKey, data: state })))
+//   )
+//   .subscribe(console.log);

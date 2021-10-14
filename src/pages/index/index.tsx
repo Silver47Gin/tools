@@ -4,7 +4,6 @@ import {
   Image,
   PageContainer,
   Input,
-  Button,
   Picker,
 } from "@tarojs/components";
 import dayjs from "dayjs";
@@ -90,9 +89,9 @@ const TodoList = observer(({ todos }: TodosProps) => {
     [todos.state]
   );
 
-  useEffect(() => {
-    todos.load();
-  }, [todos]);
+  // useEffect(() => {
+  //   todos.load();
+  // }, [todos]);
 
   return (
     <View className="todos_container">
