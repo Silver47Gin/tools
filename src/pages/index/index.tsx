@@ -15,7 +15,7 @@ import {
   Todos,
   Todo,
 } from "@tools/stores/todos";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import IconFont from "@tools/components/iconfont";
 import "./index.scss";
 
@@ -44,7 +44,7 @@ const Header = observer(({ todos }: TodosProps) => {
       <View className="header_content">
         <View className="header_title header_content_item">
           <Text className="header_title_text_big header_title_text">
-            {title}
+            {`${title}`}
           </Text>
           <Text className="header_title_text_small header_title_text">
             {dayjs().format("YYYY-MM-DD")}

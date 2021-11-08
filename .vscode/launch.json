@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "name": "taro cli test",
+      "request": "launch",
+      "command": "yarn taro build --type rn --platform android --assest-dests ./",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

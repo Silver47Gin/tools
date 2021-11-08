@@ -1,3 +1,4 @@
+import codePush from "react-native-code-push";
 import { Component } from "react";
 import "./app.scss";
 
@@ -15,4 +16,4 @@ class App extends Component {
     return this.props.children;
   }
 }
-export default App;
+export default codePush(App);

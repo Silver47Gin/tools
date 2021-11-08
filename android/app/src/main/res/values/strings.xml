@@ -1,3 +1,4 @@
 <resources>
     <!-- <string name="app_name">taroDemo</string> -->
+    <string moduleConfig="true" name="CodePushDeploymentKey">TsnOZedP5G1rRCcnleP58JfQ6OOhw78Y73zEA</string>
 </resources>

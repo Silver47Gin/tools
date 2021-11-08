@@ -59,13 +59,15 @@ const config = {
     output: {
       ios: "./ios/main.jsbundle",
       iosAssetsDest: "./ios",
-      android: "./android/app/src/main/assets/index.android.bundle",
-      androidAssetsDest: "./android/app/src/main/res",
+      android:
+        "./android/app/build/generated/assets/react/release/index.android.bundle",
+      androidAssetsDest: "./android/app/build/generated/res/react/release",
       iosSourceMapUrl: "",
       iosSourcemapOutput: "./ios/main.map",
       iosSourcemapSourcesRoot: "",
       androidSourceMapUrl: "",
-      androidSourcemapOutput: "./android/app/src/main/assets/index.android.map",
+      androidSourcemapOutput:
+        "./android/app/build/generated/assets/react/index.android.bundle.map",
       androidSourcemapSourcesRoot: "",
     },
     postcss: {
