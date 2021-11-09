@@ -55,16 +55,16 @@ const config = {
     },
   },
   rn: {
-    appName: "tarodemo",
+    appName: "taroDemo",
     output: {
       ios: "./ios/main.jsbundle",
       iosAssetsDest: "./ios",
-      android:
-        "./android/app/build/generated/assets/react/release/index.android.bundle",
-      androidAssetsDest: "./android/app/build/generated/res/react/release",
       iosSourceMapUrl: "",
       iosSourcemapOutput: "./ios/main.map",
       iosSourcemapSourcesRoot: "",
+      android:
+        "./android/app/build/generated/assets/react/release/index.android.bundle",
+      androidAssetsDest: "./android/app/build/generated/res/react/release",
       androidSourceMapUrl: "",
       androidSourcemapOutput:
         "./android/app/build/generated/assets/react/index.android.bundle.map",
