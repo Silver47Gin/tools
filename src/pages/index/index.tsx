@@ -44,7 +44,7 @@ const Header = observer(({ todos }: TodosProps) => {
       <View className="header_content">
         <View className="header_title header_content_item">
           <Text className="header_title_text_big header_title_text">
-            {`${title}`}
+            {`CodePush-v4-${title}`}
           </Text>
           <Text className="header_title_text_small header_title_text">
             {dayjs().format("YYYY-MM-DD")}

@@ -1,3 +1,4 @@
+import codepush from "react-native-code-push";
 import { Component } from "react";
 import "./app.scss";
 
@@ -15,4 +16,8 @@ class App extends Component {
     return this.props.children;
   }
 }
-export default App;
+export default codepush({
+  checkFrequency: codepush.CheckFrequency.ON_APP_START,
+  installMode: codepush.InstallMode.IMMEDIATE,
+  updateDialog: true,
+})(App);
